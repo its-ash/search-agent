@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "SearchAgent",
+  "productName": "Search Agent",
   "version": "0.1.0",
   "identifier": "com.searchagent.app",
   "build": {
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "SearchAgent",
+        "title": "Search Agent",
         "width": 1280,
         "height": 860,
         "resizable": true
@@ -25,7 +25,10 @@
   },
   "bundle": {
     "active": true,
-    "icon": [],
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.icns"
+    ],
     "targets": "all"
   }
 }

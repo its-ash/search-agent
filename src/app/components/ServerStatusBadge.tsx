@@ -16,10 +16,16 @@ export function ServerStatusBadge() {
     <div className="panel row" style={{ justifyContent: "space-between" }}>
       <div>
         <strong>Model Server</strong>
-        <span className={`badge ${status.status}`} style={{ marginLeft: 8 }}>{status.status}</span>
-        <span style={{ marginLeft: 8 }}>ownership={status.ownership}</span>
+        <span
+          className={`badge ${status.status} camel-case`}
+          style={{ marginLeft: 8 }}
+        >
+          <span className="camel-case">{status.status}</span> {status.ownership}
+        </span>
       </div>
-      <button className="btn btn-secondary" onClick={() => void restart()}>Restart</button>
+      <button className="btn btn-secondary" onClick={() => void restart()}>
+        Restart
+      </button>
     </div>
   );
 }

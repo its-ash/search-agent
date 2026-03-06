@@ -7,12 +7,12 @@ export function ChatPanel() {
   const { messages, ask, loading } = useChatStore();
 
   return (
-    <div className="panel chat-panel">
+    <div className="chat-panel">
       <div className="chat-header">
         <h2>Document Chat</h2>
         <p>Answers grounded in your indexed files.</p>
       </div>
-      <div className="chat-window">
+      <div className="chat-window chat-stream">
         {messages.length === 0 ? (
           <div className="empty-chat">Ask a question after scanning your folder.</div>
         ) : null}

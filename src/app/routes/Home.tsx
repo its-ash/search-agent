@@ -4,14 +4,17 @@ import { ScanProgress } from "../components/ScanProgress";
 import { ErrorPanel } from "../components/ErrorPanel";
 import { ServerStatusBadge } from "../components/ServerStatusBadge";
 import { ChatPanel } from "../components/ChatPanel";
+import logo from "../../assets/search-agent-logo.svg";
 
 export function Home() {
   return (
     <div className="layout">
       <aside className="sidebar">
         <div className="brand">
-          <h1>SearchAgent</h1>
-          <p>Local-first RAG Desktop</p>
+          <div className="brand-row">
+            <img src={logo} alt="Search Agent logo" className="brand-logo" />
+            <h1>Search Agent</h1>
+          </div>
         </div>
         <ServerStatusBadge />
         <FolderPicker />
@@ -20,7 +23,9 @@ export function Home() {
         <ErrorPanel />
       </aside>
       <main className="chat-main">
-        <ChatPanel />
+        <div className="chat-shell">
+          <ChatPanel />
+        </div>
       </main>
     </div>
   );
