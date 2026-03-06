@@ -1,0 +1,45 @@
+[package]
+name = "search-agent"
+version = "0.1.0"
+description = "Local-first RAG desktop app"
+authors = ["SearchAgent"]
+edition = "2021"
+
+[lib]
+name = "search_agent_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+futures = "0.3"
+once_cell = "1"
+parking_lot = "0.12"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sqlx = { version = "0.8", features = ["sqlite", "runtime-tokio-rustls", "macros", "chrono", "migrate"] }
+tantivy = "0.22"
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tokio = { version = "1", features = ["full"] }
+tokio-util = "0.7"
+tracing = "0.1"
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+walkdir = "2"
+zip = "2"
+quick-xml = "0.37"
+thiserror = "2"
+pdf-extract = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
